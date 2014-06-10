@@ -11,12 +11,9 @@ the following ufuncs are implemented.
   - input x1:cashflow, x2:forwardrate
 
   - Equivalent code:
+    for(i=n-1;i>=0;i--)
+        pv[i] = (x1[i+1] + pv[i+1]) / (1 + x2[i])
 
-'''
-for(i=n-1;i>=0;i--)
-    pv[i] = (x1[i+1] + pv[i+1]) / (1 + x2[i])
-
-'''
 
 - cum_pv_s
 
@@ -24,8 +21,6 @@ for(i=n-1;i>=0;i--)
   - input x1:cashflow, x2:forwardrate
 
   - Equivalent code:
+    for(i=n-1;i>=0;i--)
+        pv[i] = x1[i+1] + pv[i+1] / (1 + x2[i])
 
-'''
-for(i=n-1;i>=0;i--)
-    pv[i] = x1[i+1] + pv[i+1] / (1 + x2[i])
-'''
